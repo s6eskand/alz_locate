@@ -8,3 +8,7 @@ def track(request):
 
 def login(request):
     return render(request, 'corona.html')
+
+
+def create(request):
+    return render(request, 'index.html')
