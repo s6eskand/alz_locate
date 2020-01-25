@@ -12,9 +12,9 @@ function initMap() {
     maxZoom: 19
   });
 
-  var marker = new google.maps.Marker({
-    position: patientPosition,
-    map: map
-    //icon:
-  });
+  //   var marker = new google.maps.Marker({
+  //     position: patientPosition,
+  //     map: map
+  //     //icon:
+  //   });
 }
