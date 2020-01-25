@@ -17,8 +17,8 @@
 
     <div class="body">
     </div>
-    <div class ="picture">
-        <a href="footprint.jpg"></a>
+    <div class="picture">
+        <img src="{% static 'images/footprint.jpg' %}">
     </div>
     <div class="login-form">
         <form action="/examples/actions/confirmation.php" method="post">
@@ -37,7 +37,7 @@
                 <a href="#">Forgot Password?</a>
             </div>
         </form>
-        <p class="text-center"><a href="#">Create an Account</a></p>
+        <p class="text-center"><a href="{% url 'create' %}">Create an Account</a></p>
     </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
