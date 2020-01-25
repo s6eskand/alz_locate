@@ -7,7 +7,7 @@
 .login-form form {
     margin-bottom: 25px;
     background: #f7f7f7;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 25px 25px 15px rgba(0, 0, 0, 0.5);
     padding: 60px;
     font-family: sans-serif;
 }
@@ -27,9 +27,6 @@
     background-color: #b388ff;
 }
 .title{
-    /* position: center;
-    font-weight: bold;
-    width: 700px; */
     text-align: center;
     font-family: Helvetica;
 
@@ -47,4 +44,11 @@ body {
   background-attachment: fixed;
   background-size: cover;
 }
+
+picture{
+    background-image: url('footprint.png');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 
