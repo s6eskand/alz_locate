@@ -30,7 +30,7 @@
     /* position: center;
     font-weight: bold;
     width: 700px; */
-    text-align:center;
+    text-align: center;
     font-family: Helvetica;
 
 }
@@ -42,7 +42,7 @@ h1{
 }
 
 body {
-  background-image: url('bg_1.jpg');
+  background-image: linear-gradient(to bottom, #e1a6e5, #d69fde, #cb99d6, #c192cf, #b68cc7);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
