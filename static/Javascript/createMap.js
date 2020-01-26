@@ -32,8 +32,7 @@ function initMap() {
   //User's position
   var userMarker = new google.maps.Marker({
     position: userPosition,
-    map: map,
-    icon: oldIcon
+    map: map
   });
 
   // Construct the polygon.
