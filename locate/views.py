@@ -20,3 +20,7 @@ def setup(request):
 
 def register(request):
     return render(request, 'register_user.html')
+
+
+def home(request):
+    return render(request, 'main_page.html')

@@ -17,7 +17,7 @@
     </div>
 
     <div class="login-form">
-        <form action="/examples/actions/confirmation.php" method="post">
+        <form action="{% url 'main_page' %}" method="post">
             {% csrf_token %}
             <h2 class="text-center">Log in</h2>
             <div class="form-group">
@@ -37,9 +37,6 @@
 
             </div>
         </form>
-        <p class="text-center"><a href="#">Create an Account</a></p>
-            </form>
-        </div>
     </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
