@@ -74,7 +74,7 @@ function initMap() {
             strokeWeight: 6,
             map: map
           });
-          setTimeout(alert("Alfred is outside of the safe zone!"), 1000);
+          setTimeout(alert("Loved One is outside of the safe zone!"), 1000);
         }
       }, 10);
     }
