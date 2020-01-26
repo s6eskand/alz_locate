@@ -1,7 +1,5 @@
 var map;
-//PUT ELEMENT ID INTO HERE
-//var numPeople = document.getElementById("").getElementsByTagName("li").length;
-//numPeople = 2;
+
 function initMap() {
   var startCenter = { lat: 43.261, lng: -79.92198 };
   var patientPosition = { lat: 43.258, lng: -79.92198 };
@@ -32,11 +30,11 @@ function initMap() {
   });
 
   //User's position
-  //   var userMarker = new google.maps.Marker({
-  //     position: userPosition,
-  //     map: map,
-  //     icon: oldIcon
-  //   });
+  var userMarker = new google.maps.Marker({
+    position: userPosition,
+    map: map,
+    icon: oldIcon
+  });
 
   // Construct the polygon.
   var safeArea = new google.maps.Circle({
@@ -51,26 +49,26 @@ function initMap() {
   });
   safeArea.setMap(map);
 
-  //   safeArea.addListener("click", moveDad);
+  safeArea.addListener("click", moveDad);
 
-  //   function moveDad() {
-  //     var i = 0;
-  //     alert("Alfred is outside of the safe zone!");
-  //     patientMarker.setAnimation(google.maps.Animation.BOUNCE);
-  //     function myLoop() {
-  //       setTimeout(function() {
-  //         onTheRun.lng += 0.000001;
-  //         patientMarker.setPosition(onTheRun);
-  //         i++;
-  //         if (i < 1000) {
-  //           myLoop();
-  //         } else {
-  //           patientMarker.setAnimation(null);
-  //         }
-  //       }, 10);
-  //     }
-  //     myLoop();
-  //   }
+  function moveDad() {
+    var i = 0;
+    alert("Alfred is outside of the safe zone!");
+    patientMarker.setAnimation(google.maps.Animation.BOUNCE);
+    function myLoop() {
+      setTimeout(function() {
+        onTheRun.lng += 0.000001;
+        patientMarker.setPosition(onTheRun);
+        i++;
+        if (i < 1000) {
+          myLoop();
+        } else {
+          patientMarker.setAnimation(null);
+        }
+      }, 10);
+    }
+    myLoop();
+  }
 }
 
 function measure(lat1, lon1, lat2, lon2) {
