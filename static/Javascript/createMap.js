@@ -2,7 +2,7 @@ var map;
 
 function initMap() {
   var startCenter = { lat: 43.261, lng: -79.92198 };
-  var patientPosition = { lat: 43.25, lng: -79.92198 };
+  var patientPosition = { lat: 43.258, lng: -79.92198 };
   var userPosition = { lat: 43.261, lng: -79.92198 };
 
   map = new google.maps.Map(document.getElementById("map"), {
@@ -47,4 +47,26 @@ function initMap() {
     fillOpacity: 0.2
   });
   safeArea.setMap(map);
+
+  map.addListener("click", moveDad);
+  function moveDad() {
+    patientMarker.position: { lat: 43.261, lng: -79.92198 };
+  }
+  //   function moveDad() {
+  //     var i = 0;
+  //     function myLoop() {
+  //       setTimeout(function() {
+  //         patientPosition.lat += 0.02;
+  //         patientPosition.lng += 0.02;
+  //         patientMarker.position = patientPosition;
+  //         i++;
+  //         if (i < 100) {
+  //           myLoop();
+  //         } else {
+  //           newBoundary.setMap(null);
+  //         }
+  //       }, 100);
+  //     }
+  //     myLoop();
+  //   }
 }

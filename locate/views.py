@@ -7,7 +7,7 @@ def track(request):
 
 
 def login(request):
-    return render(request, 'corona.html')
+    return render(request, 'login.html')
 
 
 def create(request):
