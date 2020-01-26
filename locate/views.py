@@ -20,14 +20,30 @@ def setup(request):
 
 
 def register(request):
-    return render(request, 'register_user.html')
+    loved_ones = []
+    name = request.method.POST.get("username")
+    condition = request.method.POST.get("cond")
+    age = request.method.POST.get("age")
+
+    Care.objects.create(name=name, condition=condition, age=age)
+    loved_ones.append(name, condition, age)
+
+    stuff_for_frontend = {
+        "loved_ones": loved_ones,
+    }
+
+    return render(request, stuff_for_frontend, 'register_user.html')
 
 
 def home(request):
+    loved_ones = []
+
     if request.method == "POST":
         first_name = request.POST.get("firstname")
         last_name = request.POST.get("lastname")
+
         User.objects.create(first_name=first_name, last_name=last_name)
+
         stuff_for_frontend = {
             "first_name": first_name,
             "last_name": last_name,

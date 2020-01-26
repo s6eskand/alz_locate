@@ -36,6 +36,14 @@
 		</div>
     </div>
 
+    <div class="container">
+        <ul>
+            {% for person in loved_ones %}
+            <li>{{ loved_ones.0 }} {{ loved_ones.1 }} {{ loved_ones.2 }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
