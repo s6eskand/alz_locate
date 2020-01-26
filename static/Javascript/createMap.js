@@ -1,7 +1,6 @@
 var map;
 //PUT ELEMENT ID INTO HERE
 var numPeople = document.getElementById("").getElementsByTagName("li").length;
-numPeople = 2;
 
 function initMap() {
   var startCenter = { lat: 43.261, lng: -79.92198 };
@@ -25,19 +24,19 @@ function initMap() {
   };
   for (i = 0; i < numPeople; i++) {
     if (i == 0) {
-      var patientMarker = new google.maps.Marker({
+      var patientMarker1 = new google.maps.Marker({
         position: patientPosition,
         map: map,
         icon: oldIcon
       });
     } else if (i == 1) {
-      var patientMarker = new google.maps.Marker({
+      var patientMarker2 = new google.maps.Marker({
         position: userPosition,
         map: map,
         icon: oldIcon
       });
     } else {
-      var patientMarker = new google.maps.Marker({
+      var patientMarker3 = new google.maps.Marker({
         position: patientPosition,
         map: map,
         icon: oldIcon
