@@ -56,7 +56,7 @@ function initMap() {
     patientMarker.setAnimation(google.maps.Animation.BOUNCE);
     function myLoop() {
       setTimeout(function() {
-        onTheRun.lat += 0.00001;
+        onTheRun.lng += 0.000001;
         patientMarker.setPosition(onTheRun);
         i++;
         if (i < 1000) {
