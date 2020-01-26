@@ -45,10 +45,5 @@ body {
   background-size: cover;
 }
 
-picture{
-    background-image: url('footprint.png');
-    background-size: unset;
-    background-attachment: fixed;
-}
 
 
