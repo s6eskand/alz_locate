@@ -1,66 +1,58 @@
-<!DOCTYPE html>
+{% load static %}
+
 <html>
-<title>DeltaHacks Template</title>
+<title>Find My Fam</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="{% static 'css/styles(homepage).css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 <body>
-
+<body bgcolor="#E6E6FA">
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-    <a href="#home" class="w3-bar-item w3-button"><b>Is is </b> Corona</a>
+
+    <a href="#home" class="w3-bar-item w3-button"><b>Find My Fam</b></a>
+    <a href="#home" class="w3-bar-item w3-button"><b>Findmy</b>Fam</a>
     <!-- Float links to the right. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
+      <a href="#livemap" class="w3-bar-item w3-button">Live Map</a>
       <a href="#about" class="w3-bar-item w3-button">About</a>
       <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+      <a href="{% url" class="w3-bar-item w3-button">Register</a>
+      <a href="{% url 'login' %}" class="w3-bar-item w3-button">Login</a>
     </div>
   </div>
 </div>
-   <center> <img src="earth.jpg" alt="earth" class="centerImage"
-    width="800" height="500"></center>
 
+    <!-- About Section -->
 
-
-  <!-- About Section -->
-  <div id="wrapper"> 
-    <div id=container>
-
-        <h3>About</h3>  
-    </div>
-
-    
-  </div>
   <div class="w3-container w3-padding-32" id="about">
-
-
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About</h3>
-    <p>Is it Corona is our new web app which is designed to help individuals with Alzheimers and their primary care-takers. If those experiencing this illness enter an area defined as dangerous, set out by the caregiver, then they will be notified. 
-    </p>
+  <center> <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About</h3></center>
+  <center> <p>Find My Fam is our new web app which is designed to help individuals with Alzheimers and their primary care-takers. If those experiencing this illness enter an area defined as dangerous, set out by the caregiver, then they will be notified.
+  <center> <p>FindmyFam is our new web app which is designed to help individuals with Alzheimers and their primary care-takers. If those experiencing this illness enter an area defined as dangerous, set out by the caregiver, then they will be notified.
+  </p></center>
   </div>
 
-  
-
-  <!-- Contact Section -->
-  <div class="w3-container w3-padding-32" id="contact">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact</h3>
-    <p>Send us a message if you have any questions!</p>
-    <form action="/action_page.php" target="_blank">
-      <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
-      <input class="w3-input w3-section w3-border" type="text" placeholder="Email" required name="Email">
-      <input class="w3-input w3-section w3-border" type="text" placeholder="Subject" required name="Subject">
-      <input class="w3-input w3-section w3-border" type="text" placeholder="Comment" required name="Comment">
-      <button class="w3-button w3-black w3-section" type="submit">
-        <i class="fa fa-paper-plane"></i> SEND MESSAGE
-      </button>
-    </form>
+  <div class="container">
+    <div class="w3-container w3-padding-32" id="contact">
+      <center><h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact</h3></center>
+      <center><p>Send us a message if you have any questions!</p></center>
+      <form action="/action_page.php" target="_blank">
+        <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+        <input class="w3-input w3-section w3-border" type="text" placeholder="Email" required name="Email">
+        <input class="w3-input w3-section w3-border" type="text" placeholder="Subject" required name="Subject">
+        <input class="w3-input w3-section w3-border" type="text" placeholder="Comment" required name="Comment">
+        <button class="w3-button w3-black w3-section" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </form>
+    </div>
   </div>
 
-<!-- Footer -->
 <footer class="w3-center w3-black w3-padding-16">
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  <p>Powered by FindmyFam Technologies</p>
 </footer>
-<style>
-</style>
 </body>
 </html>

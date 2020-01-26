@@ -1,16 +1,17 @@
 var map;
-//PUT ELEMENT ID INTO HERE
-var numPeople = document.getElementById("").getElementsByTagName("li").length;
 
 function initMap() {
   var startCenter = { lat: 43.261, lng: -79.92198 };
-  var patientPosition = { lat: 43.258, lng: -79.92198 };
+  var patientPosition = { lat: 43.260063, lng: -79.920797 };
   var userPosition = { lat: 43.261, lng: -79.92198 };
-  var onTheRun = { lat: 43.258, lng: -79.92198 };
+  var onTheRun = patientPosition;
+  // Define the LatLng coordinates for the polygon's path.
+  var safeCoords = { lat: 43.261, lng: -79.92198 };
+  RADIUS = 200;
 
   map = new google.maps.Map(document.getElementById("map"), {
     center: startCenter,
-    zoom: 15,
+    zoom: 17,
     streetViewControl: false,
     disableDefaultUI: true,
     minZoom: 12,
@@ -22,27 +23,12 @@ function initMap() {
     scaledSize: new google.maps.Size(70, 70), // scaled size
     origin: new google.maps.Point(0, 0) // origin
   };
-  for (i = 0; i < numPeople; i++) {
-    if (i == 0) {
-      var patientMarker1 = new google.maps.Marker({
-        position: patientPosition,
-        map: map,
-        icon: oldIcon
-      });
-    } else if (i == 1) {
-      var patientMarker2 = new google.maps.Marker({
-        position: userPosition,
-        map: map,
-        icon: oldIcon
-      });
-    } else {
-      var patientMarker3 = new google.maps.Marker({
-        position: patientPosition,
-        map: map,
-        icon: oldIcon
-      });
-    }
-  }
+
+  var patientMarker = new google.maps.Marker({
+    position: patientPosition,
+    map: map,
+    icon: oldIcon
+  });
 
   //User's position
   var userMarker = new google.maps.Marker({
@@ -50,15 +36,12 @@ function initMap() {
     map: map
   });
 
-  // Define the LatLng coordinates for the polygon's path.
-  var safeCoords = { lat: 43.261, lng: -79.92198 };
-
   // Construct the polygon.
   var safeArea = new google.maps.Circle({
     //CENTER from datadase
-    center: safeCoords,
+    center: userPosition,
     //RADIUS from database
-    radius: 200,
+    radius: RADIUS,
     strokeColor: "#FF0000",
     strokeWeight: 5,
     fillColor: "#46eb34",
@@ -70,17 +53,28 @@ function initMap() {
 
   function moveDad() {
     var i = 0;
-    alert("Alfred is outside of the safe zone!");
     patientMarker.setAnimation(google.maps.Animation.BOUNCE);
     function myLoop() {
       setTimeout(function() {
-        onTheRun.lng += 0.000001;
+        onTheRun.lng += 0.0000011;
         patientMarker.setPosition(onTheRun);
         i++;
-        if (i < 1000) {
+        if (i < 990) {
           myLoop();
         } else {
           patientMarker.setAnimation(null);
+          var toPersonLine = new google.maps.Polyline({
+            path: [
+              userPosition,
+              { lat: 43.260893, lng: -79.921031 },
+              { lat: 43.260076, lng: -79.921016 },
+              onTheRun
+            ],
+            strokeColor: "#FF0000",
+            strokeWeight: 6,
+            map: map
+          });
+          setTimeout(alert("Loved One is outside of the safe zone!"), 1000);
         }
       }, 10);
     }

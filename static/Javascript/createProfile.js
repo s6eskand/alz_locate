@@ -1,6 +1,9 @@
 var map;
 var startCenter = { lat: 43.261, lng: -79.92198 };
-var patientPosition = { lat: 43.261, lng: -79.92198 };
+var patientPosition = { lat: 43.260063, lng: -79.920797 };
+
+RADIUS = 200;
+CENTERCIRCLE = { lat: 43.260063, lng: -79.920797 };
 
 function CenterControl(controlDiv, map) {
   // Set CSS for the control border.
@@ -22,8 +25,9 @@ function CenterControl(controlDiv, map) {
 
   controlUI.addEventListener("click", function() {
     //Get coords here
-    var radius = circle.getRadius();
-    var centerCircle = circle.getCenter();
+    //RADIUS = safeArea.getRadius();
+    //CENTERCIRCLE = safeArea.getCenter();
+    location.replace("/track");
   });
 }
 
@@ -47,7 +51,7 @@ function initMap() {
   });
 
   // Construct the circle.
-  var safeArea = new google.maps.Circle({
+  safeArea = new google.maps.Circle({
     center: startCenter,
     radius: 200,
     strokeColor: "#FF0000",

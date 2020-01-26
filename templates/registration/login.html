@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bootstrap Simple Login Form</title>
+<title>Find My Fam</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 <link rel="stylesheet" href="{% static 'css/Memory_maps.css' %}">
@@ -13,24 +13,33 @@
 <body>
 
     <div class="title">
-        <h1>Memory Map</h1>
+        <h1>Find My Fam</h1>
     </div>
 
     <div class="login-form">
         <form action="{% url 'home' %}" method="post">
             {% csrf_token %}
-            <h2 class="text-center">Log in</h2>
+            <h2 class="text-center">Register</h2>
             <div class="form-group">
-                <input name="firstname" type="text" class="form-control" placeholder="Firstname" required="required">
+                <input name="firstname" type="text" class="form-control" placeholder="Caretaker Firstname" required="required">
             </div>
             <div class="form-group">
-                <input name="lastname" type="text" class="form-control" placeholder="Lastname" required="required">
+                <input name="lastname" type="text" class="form-control" placeholder="Caretaker Lastname" required="required">
+            </div>
+            <div class="form-group">
+                <input name="name" type="text" class="form-control" placeholder="Name of Loved One" required="required">
+            </div>
+            <div class="form-group">
+                <input name="cond" type="text" class="form-control" placeholder="Severity of Condition" required="required">
+            </div>
+            <div class="form-group">
+                <input name="age" type="text" class="form-control" placeholder="Age" required="required">
             </div>
 <!--            <div class="form-group">-->
 <!--                <input type="password" class="form-control" placeholder="Password" required="required">-->
 <!--            </div>-->
             <div class="form-group">
-                <button type="submit" class="btn btn-block">Log in</button>
+                <button type="submit" class="btn btn-block">Register</button>
             </div>
             <div class="clearfix">
                 <!-- <label <p class="pull-right"></label>><input type="checkbox"> </label>
