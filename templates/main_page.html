@@ -15,15 +15,28 @@
 
     <div class="title">
         <h1>Welcome to Memory Map</h1>
-        <h1>{{ first_name }} {{ last_name }}</h1>
+        <h1>{{ first_name }} {{ last_name }} !</h1>
 
         <header>
             <h4>&#160;&#160;&#160;&#160;&#160;Name&#160;&#160;&#160;&#160;</h4>
-            <h4>Condition&#160;&#160;&#160;&#160;</h4>
+            <h4>Condition&#160;&#160;&#160;</h4>
             <h4>Age&#160;&#160;&#160;&#160;</h4>
           </header>
-            <h3>{{ loved_ones.0}}</h3>
-        <div class="container">
+          
+          <div class="form">
+                <form class = "search" method="post" class="form-horizontal">
+                    <ul>
+                        {% for person in loved_ones %}
+                        <h5 class = "form">
+                        <li>{{ person.0 }}&#160;&#160;&#160;&#160;&#160; {{ person.1 }}&#160;&#160;&#160;&#160;&#160; {{ person.2 }}&#160;&#160;&#160;&#160;&#160;&#160;</li>
+                        </h5>
+                        {% endfor %}
+                    </ul>
+
+                </form>
+          </div>
+
+
 			<div class="row">
                 <div class="col-s12">
 					<form action="{% url 'login' %}">

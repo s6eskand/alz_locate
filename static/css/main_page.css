@@ -21,7 +21,7 @@
     font-family: sans-serif;
 }
 .btn {        
-    font-size: 15px;
+    font-size: 50px;
     font-weight: bold;
     font-family: sans-serif;
     background-color: #b388ff;
@@ -68,3 +68,19 @@ div .fa:hover {
 header { border-bottom: 1px solid #000; }
 header > h4 { display: inline-block; }
 header span { margin-left: 100px; }
+
+.search {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: sans-serif;
+    background-color: #b388ff;
+    padding: 30px 30px 30px;
+    border-style: solid;
+  }
+
+  .form {
+    width: 500px;
+    margin: 0 auto;
+    font-size: 40px;
+    font-weight: bold;
+}
