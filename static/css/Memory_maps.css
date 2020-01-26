@@ -1,18 +1,18 @@
 
 .login-form {
     width: 340px;
-    margin: 50px auto;
+    margin: 40px auto;
     font-family: sans-serif;
 }
 .login-form form {
     margin-bottom: 25px;
     background: #f7f7f7;
     box-shadow: 25px 25px 15px rgba(0, 0, 0, 0.5);
-    padding: 60px;
+    padding: 20px;
     font-family: sans-serif;
 }
 .login-form h2 {
-    margin: 0 0 20px;
+    margin: 0 0 10px;
     font-family: sans-serif;
 }
 .form-control, .btn {
