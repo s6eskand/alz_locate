@@ -19,7 +19,7 @@ function initMap() {
   });
 
   var oldIcon = {
-    url: "images/ElderlyMan.png",
+    url: "{% static 'images/ElderlyMan.png' %}",
     scaledSize: new google.maps.Size(70, 70), // scaled size
     origin: new google.maps.Point(0, 0) // origin
   };
