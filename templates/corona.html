@@ -12,22 +12,12 @@
 </head>
 <body>
     <div class="title">
-        <h1> Memory Map </h1>
+        <h1>Memory Map</h1>
     </div>
 
-    <div class="body">
-        <a href="footprint.jpg"></a>
-    </div>
-<<<<<<< HEAD
-    <div class ="picture">
-        
-=======
-    <div class="picture">
-        <img src="{% static 'images/footprint.jpg' %}">
->>>>>>> 22676b48e4e992f9e93edf4cfe205b384a3cf0f9
-    </div>
     <div class="login-form">
         <form action="/examples/actions/confirmation.php" method="post">
+            {% csrf_token %}
             <h2 class="text-center">Log in</h2>
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="Username" required="required">
@@ -42,16 +32,34 @@
                 <!-- <label <p class="pull-right"></label>><input type="checkbox"> </label>
                 <a href="#">Forgot Password?</a> -->
                 <p class="text-center"><a href="#">Forgot Password</a></p>
-                <p class="text-center"><a href="#">Create an Account</a></p>
+                <p class="text-center"><a href="{% url 'create' %}">Create an Account</a></p>
 
             </div>
-<<<<<<< HEAD
-        <!-- </form>
-        <p class="text-center"><a href="#">Create an Account</a></p> -->
-=======
         </form>
-        <p class="text-center"><a href="{% url 'create' %}">Create an Account</a></p>
->>>>>>> 22676b48e4e992f9e93edf4cfe205b384a3cf0f9
+        <p class="text-center"><a href="#">Create an Account</a></p> -->
+
+        <div class="row">
+
+            <form action="/examples/actions/confirmation.php" method="post">
+                <h2 class="text-center">Log in</h2>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Username" required="required">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Password" required="required">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-block">Log in</button>
+                </div>
+                <div class="clearfix">
+                    <!-- <label <p class="pull-right"></label>><input type="checkbox"> </label>
+                    <a href="#">Forgot Password?</a> -->
+                    <p class="text-center"><a href="#">Forgot Password</a></p>
+                    <p class="text-center"><a href="{% url 'create' %}">Create an Account</a></p>
+
+                </div>
+            </form>
+        </div>
     </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
