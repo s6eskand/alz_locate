@@ -64,12 +64,17 @@ function initMap() {
         } else {
           patientMarker.setAnimation(null);
           var toPersonLine = new google.maps.Polyline({
-            path: [userPosition, onTheRun],
+            path: [
+              userPosition,
+              { lat: 43.260893, lng: -79.921031 },
+              { lat: 43.260076, lng: -79.921016 },
+              onTheRun
+            ],
             strokeColor: "#FF0000",
             strokeWeight: 6,
             map: map
           });
-          setTimeout(alert("Alfred is outside of the safe zone!"), 1000);
+          setTimeout(alert("Loved One is outside of the safe zone!"), 1000);
         }
       }, 10);
     }
