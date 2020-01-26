@@ -27,7 +27,7 @@ function CenterControl(controlDiv, map) {
     //Get coords here
     RADIUS = circle.getRadius();
     CENTERCIRCLE = circle.getCenter();
-    window.location.replace("/templates/track.html");
+    location.replace("/templates/track.html");
   });
 }
 
