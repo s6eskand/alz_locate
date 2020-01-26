@@ -1,9 +1,12 @@
 var map;
+//PUT ELEMENT ID INTO HERE
+var numPeople = document.getElementById("").getElementsByTagName("li").length;
 
 function initMap() {
   var startCenter = { lat: 43.261, lng: -79.92198 };
   var patientPosition = { lat: 43.258, lng: -79.92198 };
   var userPosition = { lat: 43.261, lng: -79.92198 };
+  var onTheRun = { lat: 43.258, lng: -79.92198 };
 
   map = new google.maps.Map(document.getElementById("map"), {
     center: startCenter,
@@ -19,13 +22,28 @@ function initMap() {
     scaledSize: new google.maps.Size(70, 70), // scaled size
     origin: new google.maps.Point(0, 0) // origin
   };
+  for (i = 0; i < numPeople; i++) {
+    if (i == 0) {
+      var patientMarker1 = new google.maps.Marker({
+        position: patientPosition,
+        map: map,
+        icon: oldIcon
+      });
+    } else if (i == 1) {
+      var patientMarker2 = new google.maps.Marker({
+        position: userPosition,
+        map: map,
+        icon: oldIcon
+      });
+    } else {
+      var patientMarker3 = new google.maps.Marker({
+        position: patientPosition,
+        map: map,
+        icon: oldIcon
+      });
+    }
+  }
 
-  var patientMarker = new google.maps.Marker({
-    position: patientPosition,
-    map: map,
-    icon: oldIcon
-  });
-  patientMarker.setAnimation(google.maps.Animation.BOUNCE);
   //User's position
   var userMarker = new google.maps.Marker({
     position: userPosition,
@@ -48,25 +66,40 @@ function initMap() {
   });
   safeArea.setMap(map);
 
-  map.addListener("click", moveDad);
+  safeArea.addListener("click", moveDad);
+
   function moveDad() {
-    patientMarker.position: { lat: 43.261, lng: -79.92198 };
+    var i = 0;
+    alert("Alfred is outside of the safe zone!");
+    patientMarker.setAnimation(google.maps.Animation.BOUNCE);
+    function myLoop() {
+      setTimeout(function() {
+        onTheRun.lng += 0.000001;
+        patientMarker.setPosition(onTheRun);
+        i++;
+        if (i < 1000) {
+          myLoop();
+        } else {
+          patientMarker.setAnimation(null);
+        }
+      }, 10);
+    }
+    myLoop();
   }
-  //   function moveDad() {
-  //     var i = 0;
-  //     function myLoop() {
-  //       setTimeout(function() {
-  //         patientPosition.lat += 0.02;
-  //         patientPosition.lng += 0.02;
-  //         patientMarker.position = patientPosition;
-  //         i++;
-  //         if (i < 100) {
-  //           myLoop();
-  //         } else {
-  //           newBoundary.setMap(null);
-  //         }
-  //       }, 100);
-  //     }
-  //     myLoop();
-  //   }
+}
+
+function measure(lat1, lon1, lat2, lon2) {
+  // generally used geo measurement function
+  var R = 6378.137; // Radius of earth in KM
+  var dLat = (lat2 * Math.PI) / 180 - (lat1 * Math.PI) / 180;
+  var dLon = (lon2 * Math.PI) / 180 - (lon1 * Math.PI) / 180;
+  var a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos((lat1 * Math.PI) / 180) *
+      Math.cos((lat2 * Math.PI) / 180) *
+      Math.sin(dLon / 2) *
+      Math.sin(dLon / 2);
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  var d = R * c;
+  return d * 1000; // meters
 }
