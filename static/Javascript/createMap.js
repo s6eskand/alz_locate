@@ -16,20 +16,18 @@ function initMap() {
   var marker = new google.maps.Marker({
     position: patientPosition,
     map: map
-    //icon:
+    icon:{% static 'Images/ElderlyMan.png' %}
   });
 
   // Define the LatLng coordinates for the polygon's path.
-  var safeCoords = [
-    { lat: 43.25, lng: -79.92198 },
-    { lat: 43.25, lng: -79.94 },
-    { lat: 43.27, lng: -79.92198 },
-    { lat: 43.27, lng: -79.9 }
-  ];
+  var safeCoords = { lat: 43.261, lng: -79.92198 };
 
   // Construct the polygon.
-  var safeArea = new google.maps.Polygon({
-    paths: safeCoords,
+  var safeArea = new google.maps.Circle({
+    //CENTER from datadase
+    center: safeCoords,
+    //RADIUS from database
+    radius: 200,
     strokeColor: "#FF0000",
     strokeWeight: 5,
     fillColor: "#46eb34",
