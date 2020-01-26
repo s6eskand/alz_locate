@@ -7,6 +7,8 @@ function initMap() {
   var patientPosition = { lat: 43.258, lng: -79.92198 };
   var userPosition = { lat: 43.261, lng: -79.92198 };
   var onTheRun = { lat: 43.258, lng: -79.92198 };
+  // Define the LatLng coordinates for the polygon's path.
+  var safeCoords = { lat: 43.261, lng: -79.92198 };
 
   map = new google.maps.Map(document.getElementById("map"), {
     center: startCenter,
@@ -30,14 +32,11 @@ function initMap() {
   });
 
   //User's position
-  var userMarker = new google.maps.Marker({
-    position: userPosition,
-    map: map,
-    icon: oldIcon
-  });
-
-  // Define the LatLng coordinates for the polygon's path.
-  var safeCoords = { lat: 43.261, lng: -79.92198 };
+  //   var userMarker = new google.maps.Marker({
+  //     position: userPosition,
+  //     map: map,
+  //     icon: oldIcon
+  //   });
 
   // Construct the polygon.
   var safeArea = new google.maps.Circle({
