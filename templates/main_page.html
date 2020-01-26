@@ -14,26 +14,30 @@
 <body>
 
     <div class="title">
-        <h1>Welcome to Memory Map</h1>
+        <h1>Welcome to Find My Fam</h1>
         <h1>{{ first_name }} {{ last_name }} !</h1>
-
-        <header>
-            <h4>&#160;&#160;&#160;&#160;&#160;Name&#160;&#160;&#160;&#160;</h4>
-            <h4>Condition&#160;&#160;&#160;</h4>
-            <h4>Age&#160;&#160;&#160;&#160;</h4>
-          </header>
           
-          <div class="form">
-                <form class = "search" method="post" class="form-horizontal">
-                    <ul>
-                        {% for person in loved_ones %}
-                        <h5 class = "form">
-                        <li>{{ person.0 }}&#160;&#160;&#160;&#160;&#160; {{ person.1 }}&#160;&#160;&#160;&#160;&#160; {{ person.2 }}&#160;&#160;&#160;&#160;&#160;&#160;</li>
-                        </h5>
-                        {% endfor %}
-                    </ul>
+          <div>
+              {% for person in loved_ones %}
+                <div class="container">
+                    <div class="col-s12">
+                      <div class="card white">
+                        <div class="card-content black-text">
+                          <span class="card-title">{{ person.0 }}</span>
+                          <p>
+                              Condition of Illness: {{ person.1 }}
+                              <br>
+                              Age: {{ person.2 }}
+                          </p>
+                        </div>
+                        <div class="card-action">
+                          <a style="font-color: black; text-decoration: none;" href="{% url 'track' %}">Track Loved One</a>
+                        </div>
+                      </div>
+                    </div>
+                </div>
 
-                </form>
+              {% endfor %}
           </div>
 
 
@@ -47,7 +51,6 @@
 				</div>
 			</div>
 		</div>
-    </div>
 
 
 
