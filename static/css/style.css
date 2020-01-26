@@ -1,7 +1,11 @@
 body{
     color: #fff;
     background: #63738a;
-    font-family: 'Roboto', sans-serif;
+    font-family: Verdana,Geneva,sans-serif;
+
+    background-color: lightblue;
+    
+
 }
 .form-control{
     height: 40px;
@@ -85,3 +89,4 @@ body{
 .signup-form form a:hover{
     text-decoration: underline;
 }  
+

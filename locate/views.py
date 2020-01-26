@@ -12,3 +12,7 @@ def login(request):
 
 def create(request):
     return render(request, 'index.html')
+
+
+def setup(request):
+    return render(request, 'mapSetup.html')
