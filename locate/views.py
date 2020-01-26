@@ -16,3 +16,7 @@ def create(request):
 
 def setup(request):
     return render(request, 'mapSetup.html')
+
+
+def register(request):
+    return render(request, 'register_user.html')
