@@ -7,6 +7,7 @@ function initMap() {
   var onTheRun = patientPosition;
   // Define the LatLng coordinates for the polygon's path.
   var safeCoords = { lat: 43.261, lng: -79.92198 };
+  RADIUS = 200;
 
   map = new google.maps.Map(document.getElementById("map"), {
     center: startCenter,
@@ -38,9 +39,9 @@ function initMap() {
   // Construct the polygon.
   var safeArea = new google.maps.Circle({
     //CENTER from datadase
-    center: safeCoords,
+    center: userPosition,
     //RADIUS from database
-    radius: 200,
+    radius: RADIUS,
     strokeColor: "#FF0000",
     strokeWeight: 5,
     fillColor: "#46eb34",

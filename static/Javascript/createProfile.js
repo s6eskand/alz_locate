@@ -25,9 +25,9 @@ function CenterControl(controlDiv, map) {
 
   controlUI.addEventListener("click", function() {
     //Get coords here
-    RADIUS = circle.getRadius();
-    CENTERCIRCLE = circle.getCenter();
-    location.replace("/templates/track.html");
+    //RADIUS = safeArea.getRadius();
+    //CENTERCIRCLE = safeArea.getCenter();
+    location.replace("/track");
   });
 }
 
@@ -51,7 +51,7 @@ function initMap() {
   });
 
   // Construct the circle.
-  var safeArea = new google.maps.Circle({
+  safeArea = new google.maps.Circle({
     center: startCenter,
     radius: 200,
     strokeColor: "#FF0000",
