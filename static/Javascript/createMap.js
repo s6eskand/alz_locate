@@ -8,6 +8,7 @@ function initMap() {
     center: startCenter,
     zoom: 15,
     streetViewControl: false,
+    disableDefaultUI: true,
     minZoom: 14,
     maxZoom: 19
   });
