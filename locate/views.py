@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import User, Care
+from .models import User
 
 
 # Create your views here.
@@ -19,20 +19,8 @@ def setup(request):
     return render(request, 'mapSetup.html')
 
 
-def register(request):
-    loved_ones = []
-    name = request.method.POST.get("username")
-    condition = request.method.POST.get("cond")
-    age = request.method.POST.get("age")
-
-    Care.objects.create(name=name, condition=condition, age=age)
-    loved_ones.append(name, condition, age)
-
-    stuff_for_frontend = {
-        "loved_ones": loved_ones,
-    }
-
-    return render(request, stuff_for_frontend, 'register_user.html')
+# def register(request):
+#     return render(request, 'register_user.html')
 
 
 def home(request):
@@ -41,15 +29,23 @@ def home(request):
     if request.method == "POST":
         first_name = request.POST.get("firstname")
         last_name = request.POST.get("lastname")
+        name = request.POST.get("name")
+        state = request.POST.get("cond")
+        age = request.POST.get("age")
 
-        User.objects.create(first_name=first_name, last_name=last_name)
+        User.objects.create(first_name=first_name, last_name=last_name, name=name, state=state, age=age)
+
+        loved_ones.append((name, state, age))
 
         stuff_for_frontend = {
             "first_name": first_name,
             "last_name": last_name,
+            "loved_ones": loved_ones,
         }
     else:
-        stuff_for_frontend = {}
+        stuff_for_frontend = {
+            "loved_ones": loved_ones,
+        }
 
     return render(
         request,

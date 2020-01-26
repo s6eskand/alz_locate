@@ -19,18 +19,27 @@
     <div class="login-form">
         <form action="{% url 'home' %}" method="post">
             {% csrf_token %}
-            <h2 class="text-center">Log in</h2>
+            <h2 class="text-center">Register</h2>
             <div class="form-group">
-                <input name="firstname" type="text" class="form-control" placeholder="Firstname" required="required">
+                <input name="firstname" type="text" class="form-control" placeholder="Caretaker Firstname" required="required">
             </div>
             <div class="form-group">
-                <input name="lastname" type="text" class="form-control" placeholder="Lastname" required="required">
+                <input name="lastname" type="text" class="form-control" placeholder="Caretaker Lastname" required="required">
+            </div>
+            <div class="form-group">
+                <input name="name" type="text" class="form-control" placeholder="Name of Loved One" required="required">
+            </div>
+            <div class="form-group">
+                <input name="cond" type="text" class="form-control" placeholder="Severity of Condition" required="required">
+            </div>
+            <div class="form-group">
+                <input name="age" type="text" class="form-control" placeholder="Age" required="required">
             </div>
 <!--            <div class="form-group">-->
 <!--                <input type="password" class="form-control" placeholder="Password" required="required">-->
 <!--            </div>-->
             <div class="form-group">
-                <button type="submit" class="btn btn-block">Log in</button>
+                <button type="submit" class="btn btn-block">Register</button>
             </div>
             <div class="clearfix">
                 <!-- <label <p class="pull-right"></label>><input type="checkbox"> </label>
