@@ -64,3 +64,7 @@ div .fa:hover {
     background: #1AEFC6;
     transform: scale(1.25);
 }*/
+
+header { border-bottom: 1px solid #000; }
+header > h4 { display: inline-block; }
+header span { margin-left: 100px; }
