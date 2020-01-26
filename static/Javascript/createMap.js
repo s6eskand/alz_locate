@@ -19,7 +19,7 @@ function initMap() {
   });
 
   var oldIcon = {
-    url: "{% static 'images/ElderlyMan.png' %}",
+    url: "https://cdn.clipart.email/33ddab87875ad4c53513cef67239f273_image-of-old-people-clip-art-1574-clip-art-old-man-clipartoons_900-900.png",
     scaledSize: new google.maps.Size(70, 70), // scaled size
     origin: new google.maps.Point(0, 0) // origin
   };
