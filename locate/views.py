@@ -24,3 +24,7 @@ def register(request):
 
 # def home(request):
 #     return render(request, 'main_page.html')
+
+
+def landing_page(request):
+    return render(request, 'index2.html')
