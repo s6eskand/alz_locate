@@ -12,18 +12,11 @@
 </head>
 <body>
     <div class="title">
-        <h1> Memory Map </h1>
+        <h1>Memory Map</h1>
     </div>
 
-    <div class="body">
-        <!-- <img src="https://media1.thehungryjpeg.com/thumbs/800_3537546_27b3o6tzlmo2dfeauzykxcsa2tx8s7e0e8wse5hr.jpg"> -->
-        <img src="https://www.freepngimg.com/thumb/footprints/30161-3-footprints-picture-thumb.png">
-    </div>
-    <div class ="col-lg-4">
-        <img src="images/footprint.png">
-
-    </div>
     <div class="login-form">
+<<<<<<< HEAD
         <form action="/examples/actions/confirmation.php" method="post">
             {% csrf_token %}
             <h2 class="text-center">Log in</h2>
@@ -45,6 +38,31 @@
             </div>
         </form>
         <p class="text-center"><a href="#">Create an Account</a></p> -->
+=======
+
+        <div class="row">
+
+            <form action="/examples/actions/confirmation.php" method="post">
+                <h2 class="text-center">Log in</h2>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Username" required="required">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Password" required="required">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-block">Log in</button>
+                </div>
+                <div class="clearfix">
+                    <!-- <label <p class="pull-right"></label>><input type="checkbox"> </label>
+                    <a href="#">Forgot Password?</a> -->
+                    <p class="text-center"><a href="#">Forgot Password</a></p>
+                    <p class="text-center"><a href="{% url 'create' %}">Create an Account</a></p>
+
+                </div>
+            </form>
+        </div>
+>>>>>>> b6ab75d0b10ce1019ee11385ba98b6a2119c46de
     </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
