@@ -1,8 +1,5 @@
-from django.shortcuts import render, redirect
-from django.contrib.auth.forms import UserCreationForm
-from django.urls import reverse_lazy
-from django.views import generic
-from django.contrib.auth import login, authenticate
+from django.shortcuts import render
+from .models import User, Care
 
 
 # Create your views here.
@@ -10,14 +7,12 @@ def track(request):
     return render(request, 'track.html')
 
 
-# def login(request):
-#     return render(request, 'login.html')
+def login(request):
+    return render(request, 'registration/login.html')
 
 
-class SignUp(generic.CreateView):
-    form_class = UserCreationForm
-    success_url = reverse_lazy('login')
-    template_name = 'index.html'
+def create(request):
+    return render(request, 'index.html')
 
 
 def setup(request):
@@ -28,8 +23,23 @@ def register(request):
     return render(request, 'register_user.html')
 
 
-# def home(request):
-#     return render(request, 'main_page.html')
+def home(request):
+    if request.method == "POST":
+        first_name = request.POST.get("firstname")
+        last_name = request.POST.get("lastname")
+        User.objects.create(first_name=first_name, last_name=last_name)
+        stuff_for_frontend = {
+            "first_name": first_name,
+            "last_name": last_name,
+        }
+    else:
+        stuff_for_frontend = {}
+
+    return render(
+        request,
+        'main_page.html',
+        stuff_for_frontend,
+    )
 
 
 def landing_page(request):
