@@ -1,4 +1,7 @@
 var map;
+//PUT ELEMENT ID INTO HERE
+var numPeople = document.getElementById("").getElementsByTagName("li").length;
+numPeople = 2;
 
 function initMap() {
   var startCenter = { lat: 43.261, lng: -79.92198 };
@@ -20,12 +23,28 @@ function initMap() {
     scaledSize: new google.maps.Size(70, 70), // scaled size
     origin: new google.maps.Point(0, 0) // origin
   };
+  for (i = 0; i < numPeople; i++) {
+    if (i == 0) {
+      var patientMarker = new google.maps.Marker({
+        position: patientPosition,
+        map: map,
+        icon: oldIcon
+      });
+    } else if (i == 1) {
+      var patientMarker = new google.maps.Marker({
+        position: userPosition,
+        map: map,
+        icon: oldIcon
+      });
+    } else {
+      var patientMarker = new google.maps.Marker({
+        position: patientPosition,
+        map: map,
+        icon: oldIcon
+      });
+    }
+  }
 
-  var patientMarker = new google.maps.Marker({
-    position: patientPosition,
-    map: map,
-    icon: oldIcon
-  });
   //User's position
   var userMarker = new google.maps.Marker({
     position: userPosition,
