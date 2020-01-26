@@ -1,11 +1,7 @@
 body{
     color: #fff;
-    background: #63738a;
     font-family: Verdana,Geneva,sans-serif;
-
-    background-color: lightblue;
-    
-
+    background-image: linear-gradient(to bottom, #e1a6e5, #d69fde, #cb99d6, #c192cf, #b68cc7);
 }
 .form-control{
     height: 40px;

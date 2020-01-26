@@ -17,15 +17,18 @@
     </div>
 
     <div class="login-form">
-        <form method="post">
+        <form action="{% url 'home' %}" method="post">
             {% csrf_token %}
             <h2 class="text-center">Log in</h2>
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Username" required="required">
+                <input name="firstname" type="text" class="form-control" placeholder="Firstname" required="required">
             </div>
             <div class="form-group">
-                <input type="password" class="form-control" placeholder="Password" required="required">
+                <input name="lastname" type="text" class="form-control" placeholder="Lastname" required="required">
             </div>
+<!--            <div class="form-group">-->
+<!--                <input type="password" class="form-control" placeholder="Password" required="required">-->
+<!--            </div>-->
             <div class="form-group">
                 <button type="submit" class="btn btn-block">Log in</button>
             </div>
@@ -34,7 +37,6 @@
                 <a href="#">Forgot Password?</a> -->
                 <p class="text-center"><a href="#">Forgot Password</a></p>
                 <p class="text-center"><a href="{% url 'create' %}">Create an Account</a></p>
-
             </div>
         </form>
     </div>
