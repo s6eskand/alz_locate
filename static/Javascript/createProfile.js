@@ -5,23 +5,25 @@ var patientPosition = { lat: 43.261, lng: -79.92198 };
 function CenterControl(controlDiv, map) {
   // Set CSS for the control border.
   var controlUI = document.createElement("div");
-  controlUI.style.backgroundColor = "#fff";
+  controlUI.style.backgroundColor = "#46eb34";
   controlUI.style.borderRadius = "6px";
   controlUI.style.boxShadow = "0 2px 6px rgba(0,0,0,.3)";
   controlUI.style.cursor = "pointer";
   controlUI.style.textAlign = "center";
+  controlUI.style.opacity = "0.7";
   controlDiv.appendChild(controlUI);
 
   // Set CSS for the control interior.
   var controlText = document.createElement("div");
   controlText.style.fontSize = "16px";
   controlText.style.padding = "15px";
-  controlText.innerHTML = "Center Map";
+  controlText.innerHTML = "Register Safe Zone";
   controlUI.appendChild(controlText);
 
-  // Setup the click event listeners: simply set the map to Chicago.
   controlUI.addEventListener("click", function() {
-    map.setCenter(startCenter);
+    //Get coords here
+    var radius = circle.getRadius();
+    var centerCircle = circle.getCenter();
   });
 }
 
@@ -44,17 +46,10 @@ function initMap() {
     //icon:
   });
 
-  // Define the LatLng coordinates for the polygon's path.
-  var safeCoords = [
-    { lat: 43.25, lng: -79.92198 },
-    { lat: 43.25, lng: -79.94 },
-    { lat: 43.27, lng: -79.92198 },
-    { lat: 43.27, lng: -79.9 }
-  ];
-
-  // Construct the polygon.
-  var safeArea = new google.maps.Polygon({
-    paths: safeCoords,
+  // Construct the circle.
+  var safeArea = new google.maps.Circle({
+    center: startCenter,
+    radius: 200,
     strokeColor: "#FF0000",
     strokeWeight: 5,
     fillColor: "#46eb34",
